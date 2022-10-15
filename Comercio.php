@@ -1,9 +1,9 @@
 <?php
 require_once ('Cliente.php');
 require_once ('Proveedor.php');
-/*require_once ('Usuario.php');*/
+require_once ('Usuario.php');
 require_once ('Factura.php');
-*/require_once ('Producto.php');*/
+require_once ('Producto.php');
 require_once ('Persona.php'); 
 
     class Comercio {
@@ -78,7 +78,7 @@ require_once ('Persona.php');
                 $nuevoFactura = new Factura($factura->fecha, $factura->total);
                 $this->agregarFcatura($nuevoFactura);
             } 
-=======
+           
             $productos = $jsonDatos->productos;
             foreach ($productos as $producto) {
                 $nuevoProducto = new Producto($producto->nombre, $producto->marca, $producto->precio);
@@ -89,8 +89,9 @@ require_once ('Persona.php');
                 $nuevoUsuario = new Usuario($usuario->nombre, $usuario->telefono, $usuario->clave);
                 $this->agregarUsuario($nuevoUsuario);
             }
->>>>>>> c6dc8b3c7e529010b799b691afec879ee1ac5410
-        } $pedidos = $jsonDatos->pedidos;
+        
+
+        $pedidos = $jsonDatos->pedidos;
         foreach ($pedidos as $pedido) {
             $nuevoPedido = new Pedido($pedido>fecha, $pedido>producto, $pedido>cantidad);
             $this->agregarProducto($nuevoProducto);
@@ -109,5 +110,6 @@ require_once ('Persona.php');
         }
       
     }
+}
 
     //['a', '1234', 'equry']   -----> implode(',', ['a', '1234', 'equry']) = 'a,1234,equry'
