@@ -1,5 +1,13 @@
 <?php
-  require_once ('autoload.php');
+  /* require_once ('autoload.php'); */
+require_once ('Cliente.php');
+require_once ('Proveedor.php');
+require_once ('Usuario.php');
+require_once ('Factura.php');
+require_once ('Producto.php');
+require_once ('Persona.php');
+require_once ('Comercio.php');
+require_once ('Pedido.php');
     $comercio = new Comercio();
 
     $c1 = new Cliente('Juan','2494553655','23-285460239','inscripto');
