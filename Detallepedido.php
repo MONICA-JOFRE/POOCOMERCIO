@@ -1,4 +1,5 @@
 <?php
+require_once ('Producto');
 class Detallepedido  extends Producto{
     public $cantidad; 
 }

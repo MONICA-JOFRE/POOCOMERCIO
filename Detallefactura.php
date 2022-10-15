@@ -1,6 +1,8 @@
 <?php
+require_once ('Producto');
 class Detallefactura  extends Producto{
     public $cantidad; 
+
 }
 function __construct($cantidad){
     parent :: __construct ($nombre, $marca, $precio);
