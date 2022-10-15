@@ -5,12 +5,12 @@ class Factura extends Detallefactura {
     public $fecha;
     public $total;
 }
-function __construct($nombre, $fecha,$total){
+function __construct($fecha,$total){
     parenth :: __construct($cantidad);
             $this->id = ++self ::$numero;
             $this->fecha= $fecha;
             $this->total = $total;
-            $this ->nombre=$nombre;
+    
 
 }
 
@@ -20,14 +20,7 @@ function __construct($nombre, $fecha,$total){
         function getTotal() {
             return $this->total;
         } 
-        function getNombre() {
-            return $this->nombre;
-        }
-        
-        function setNombre() {
-            return $this->nombre;
-        }
-        
+    
 
         function setFecha() {
             return $this->fecha;
