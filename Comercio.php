@@ -1,16 +1,9 @@
 <?php
 require_once ('Cliente.php');
 require_once ('Proveedor.php');
-<<<<<<< HEAD
 /*require_once ('Usuario.php');*/
 require_once ('Factura.php');
 */require_once ('Producto.php');*/
-=======
-require_once ('Usuario.php');
-/*require_once ('Factura.php');
-require_once ('Pedido.php');*/
-require_once ('Producto.php');
->>>>>>> c6dc8b3c7e529010b799b691afec879ee1ac5410
 require_once ('Persona.php'); 
 
     class Comercio {
@@ -28,7 +21,6 @@ require_once ('Persona.php');
         function agregarProveedor($proveedor) {
             $this->proveedores[] = $proveedor;
         }
-<<<<<<< HEAD
 
         function agregarFactura($factura) {
             $this->facturas[] = $factura;
@@ -38,14 +30,6 @@ require_once ('Persona.php');
             $this->pedidos[] = $pedido;
         } 
         
-=======
-        function agregarProducto($producto) {
-            $this->productos[] = $producto;
-        }
-        function agregarUsuario($usuario) {
-            $this->usuarios[] = $usuario;
-        } 
->>>>>>> c6dc8b3c7e529010b799b691afec879ee1ac5410
         function getJSON() {
             $jsonCliente = [];
             foreach ($this->clientes as $cliente) {

@@ -1,5 +1,5 @@
 <?php
-class Detallepedido  extends Producto{
+class Detallefactura  extends Producto{
     public $cantidad; 
 }
 function __construct($cantidad){

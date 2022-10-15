@@ -1,16 +1,16 @@
 <?php
-class Pedido {
+class Pedido extends Detallepedido {
     static protected $npedido=0;
     public $fecha;
     public $producto;
-    public $cantidad;
+    
 }
-function __construct($fecha,$producto,$cantidad)
-        {
+function __construct($fecha,$producto) {
+    parenth :: __construct ($cantidad);
             $this->id = ++self ::$npedido;
             $this->fecha= $fecha;
             $this->producto = $producto;
-            $this->cantidad = $cantidad;
+           
 
 }
 
@@ -20,10 +20,7 @@ function __construct($fecha,$producto,$cantidad)
         function getProducto() {
             return $this->producto;
         }
-        function getCantidad() {
-            return $this->cantidad;
-        }
-
+       
         
         function setFecha() {
             return $this->fecha;
@@ -31,6 +28,4 @@ function __construct($fecha,$producto,$cantidad)
         function setProducto() {
             return $this->producto;
         }
-        function setCantidad() {
-          return $this->cantidad;
-        }
+        
