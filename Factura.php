@@ -20,8 +20,6 @@ function __construct($fecha,$total){
         function getTotal() {
             return $this->total;
         } 
-    
-
         function setFecha() {
             return $this->fecha;
         }
@@ -29,4 +27,4 @@ function __construct($fecha,$total){
             return $this->total;
         }
     
-    }
+}

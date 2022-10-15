@@ -73,8 +73,6 @@ require_once ('Persona.php');
                 $nuevoProveedor = new Proveedor($proveedor->nombre, $proveedor->telefono, $proveedor->empresa);
                 $this->agregarProveedor($nuevoProveedor);
             }
-<<<<<<< HEAD
-
             $facturas = $jsonDatos->facturas;
             foreach ($facturas as $factura) {
                 $nuevoFactura = new Factura($factura->fecha, $factura->total);
