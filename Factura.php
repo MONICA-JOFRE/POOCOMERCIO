@@ -4,7 +4,7 @@ class Factura extends Detallefactura {
     static protected $numero=0;
     public $fecha;
     public $total;
-}
+
 function __construct($fecha,$total){
     parenth :: __construct($cantidad);
             $this->id = ++self ::$numero;
@@ -29,4 +29,4 @@ function __construct($fecha,$total){
             return $this->total;
         }
     
-
+    }
