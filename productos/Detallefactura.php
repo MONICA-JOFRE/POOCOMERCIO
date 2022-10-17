@@ -1,12 +1,15 @@
 <?php
 require_once ('Producto.php');
-class Detallefactura  extends Producto{
+
+use \productos\Producto;
+
+class Detallefactura{
     public $cantidad; 
 
 
-    function __construct($nombre, $marca, $precio, $cantidad)
+    function __construct( $cantidad)
         {
-        parent :: __construct($nombre, $marca, $precio);
+    
         $this->cantidad= cantidad;
         }
        

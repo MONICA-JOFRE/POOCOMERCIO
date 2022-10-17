@@ -1,6 +1,7 @@
 <?php
 require_once ('autoload.php');
 
+
     class Cliente extends Persona{
         static protected $cantidad=0;
         public $cuit;
