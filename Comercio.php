@@ -21,12 +21,16 @@ require_once ('Persona.php');
         function agregarProveedor($proveedor) {
             $this->proveedores[] = $proveedor;
         }
-
+        function agregarProducto($producto) {
+            $this->productos[] = $producto;
+        }
+        function agregarUsuario($usuario) {
+            $this->usuarios[] = $usuario;
+        }
         function agregarFactura($factura) {
             $this->facturas[] = $factura;
-        
-        
-        } function agregarPedido($pedido) {
+        } 
+        function agregarPedido($pedido) {
             $this->pedidos[] = $pedido;
         } 
         

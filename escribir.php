@@ -8,6 +8,7 @@ require_once ('Producto.php');
 require_once ('Persona.php');
 require_once ('Comercio.php');
 require_once ('Pedido.php');
+
     $comercio = new Comercio();
 
     $c1 = new Cliente('Juan','2494553655','23-285460239','inscripto');
