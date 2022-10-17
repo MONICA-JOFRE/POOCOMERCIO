@@ -1,37 +1,24 @@
 <?php
-require_once ('Detallepedido.php');
+require_once ('autoload.php');
 
 use \personas\Proveedor;
-class Pedido extends Detallepedido {
+use \personas\Usuario;
+
+
+class Pedido {
     static protected $npedido=0;
     public $fecha;
-    public $producto;
-    
-
-
-function __construct($cantidad,$fecha,$producto) {
-    parent :: __construct ($cantidad);
+   
+   function __construct($fecha,$producto) {
             $this->id = ++self ::$npedido;
             $this->fecha= $fecha;
-            $this->producto = $producto;
-            
-           
-
-}
+       }
 
         function getFecha() {
             return $this->fecha;
         }
-        function getProducto() {
-            return $this->producto;
-        }
-       
-        
         function setFecha() {
             return $this->fecha;
         }
-        function setProducto() {
-            return $this->producto;
-        }
         
-    }
+}

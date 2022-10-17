@@ -1,7 +1,8 @@
 <?php
 require_once('Detallefactura.php');
 
-use \personas\Cliente; 
+use \personas\Cliente;
+use \personas\Usuario; 
 
 class Factura extends Detallefactura{
     static protected $numero=0;

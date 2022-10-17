@@ -1,5 +1,5 @@
 <?php
-require_once ('Producto.php');
+require_once ('autoload.php');
 
 use \productos\Producto;
 
