@@ -1,13 +1,13 @@
 <?php
-require_once ('Detallepedido');
+require_once ('Detallepedido.php');
 class Pedido extends Detallepedido {
     static protected $npedido=0;
     public $fecha;
     public $producto;
     
-}
+
 function __construct($cantidad,$fecha,$producto) {
-    parenth :: __construct ($cantidad);
+    parent :: __construct ($cantidad);
             $this->id = ++self ::$npedido;
             $this->fecha= $fecha;
             $this->producto = $producto;
@@ -31,3 +31,4 @@ function __construct($cantidad,$fecha,$producto) {
             return $this->producto;
         }
         
+    }
