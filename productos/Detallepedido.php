@@ -1,11 +1,11 @@
 <?php
 require_once ('autoload.php');
+use \productos\Producto;
 
-class Detallepedido  extends Producto{
+class Detallepedido {
     public $cantidad; 
 
-    function __construct($nombre, $marca, $precio, $cantidad){
-    parent :: __construct ($nombre, $marca, $precio);
+    function __construct($cantidad){
         $this->cantidad = cantidad;
         }
 
