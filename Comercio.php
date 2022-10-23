@@ -98,7 +98,7 @@ require_once ('Persona.php');  */
         $pedidos = $jsonDatos->pedidos;
         foreach ($pedidos as $pedido) {
             $nuevoPedido = new Pedido($pedido>fecha, $pedido>producto, $pedido>cantidad);
-            $this->agregarProducto($nuevoProducto);
+            $this->agregarPedido($nuevoPedido);
         } 
 
 

@@ -4,7 +4,7 @@ require_once 'autoload.php';
 
 function agregarProducto(){
     
-    
+    $lista= array();
     echo ("Ingrese nombre del producto:");
     $nombre = trim(fgets(STDIN));
     echo ("Ingrese marca del producto:");
@@ -19,10 +19,9 @@ function agregarProducto(){
     $c->setMarca($marca);
     $c->setCantidad ($cantidad);
     $c->setPrecio($precio);
-    
-    //var_dump($c);
-  
-    return $c;
+    //return $c;
+    array_push($lista, $c);
+    return $lista;
 }
 
 function listarProductos($productos){
