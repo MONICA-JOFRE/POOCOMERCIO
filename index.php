@@ -1,39 +1,34 @@
 <?php
-//require_once 'autoload.php';
-include_once('Cliente.php');
-include_once('Proveedor.php');
-include_once('Usuario.php');
-include_once('Factura.php');
-include_once('Producto.php');
-include_once('Persona.php');
-include_once('Pedido.php');
-include_once('Comercio.php');
-include_once('index.php');
-include_once('menu.php');
+require_once 'autoload.php';
+
 
 function agregarProducto(){
-    $c = new Producto();
+    
     
     echo ("Ingrese nombre del producto:");
     $nombre = trim(fgets(STDIN));
     echo ("Ingrese marca del producto:");
     $marca = trim(fgets(STDIN));
-    //echo ("Ingrese cuantos productos entraron:");
-    //$cantidad = trim(fgets(STDIN));
+    echo ("Ingrese cuantos productos entraron:");
+    $cantidad = trim(fgets(STDIN));
     echo ("Ingrese precio del producto:");
     $precio = trim(fgets(STDIN));
-    
+    $c = new Producto($nombre,$marca,$cantidad,$precio);
+   
     $c->setNombre($nombre);
     $c->setMarca($marca);
-    //$c->setCantidad ($cantidad);
+    $c->setCantidad ($cantidad);
     $c->setPrecio($precio);
     
-
+    //var_dump($c);
+  
     return $c;
 }
 
 function listarProductos($productos){
     echo("LISTA DE PRODUCTOS");
+    echo("\n");
+    echo("-Nombre-Marca-cantidad-Precio");
     echo("\n");
     foreach ($productos as $producto){
         
@@ -41,8 +36,8 @@ function listarProductos($productos){
         echo (" ");
         echo ($producto->getMarca());
         echo (" ");
-        //echo ($producto->getCantidad());
-        //echo (" ");
+        echo ($producto->getCantidad());
+        echo (" ");
         echo ($producto->getPrecio());
         echo ("\n");
        
@@ -58,8 +53,8 @@ function modificarProductos($productos){
         echo (" ");
         echo ($producto->getMarca());
         echo (" ");
-        //echo ($producto->getCantidad());
-        //echo (" ");
+        echo ($producto->getCantidad());
+        echo (" ");
         echo ($producto->getPrecio());
         echo ("\n");
        
@@ -74,8 +69,8 @@ function ventaProductos($productos){
         echo (" ");
         echo ($producto->getMarca());
         echo (" ");
-        //echo ($producto->getCantidad());
-        //echo (" ");
+        echo ($producto->getCantidad());
+        echo (" ");
         echo ($producto->getPrecio());
         echo ("\n");
        
