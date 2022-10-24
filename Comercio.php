@@ -61,6 +61,12 @@ require_once ('Persona.php');  */
                 $jsonFactura[] = json_encode($factura);
             }
             $jsonFactura = '"facturas" : ['.implode(',', $jsonFactura).']';
+            
+            $jsonPedido = [];
+            foreach ($this->pedidos as $pedido) {
+                $jsonPedido[] = json_encode($pedido);
+            }
+            $jsonPedido = '"pedidos" : ['.implode(',', $jsonPedido).']';
 
             $jsonUsuario = [];
             foreach ($this->usuarios as $usuario) {
@@ -68,7 +74,7 @@ require_once ('Persona.php');  */
             }
             $jsonUsuario = '"usuarios" : ['.implode(',', $jsonUsuario).']';
 
-            return '{'. $jsonCliente . ',' . $jsonProveedor . ',' . $jsonProducto . ',' . $jsonUsuario . ',' . $jsonFactura . '}';
+            return '{'. $jsonCliente . ',' . $jsonProveedor . ',' . $jsonProducto . ',' . $jsonUsuario . ',' . $jsonFactura . ',' . $jsonPedido .'}';
         }
 
         function setJSON($datos) {
@@ -87,7 +93,7 @@ require_once ('Persona.php');  */
             }
             $facturas = $jsonDatos->facturas;
             foreach ($facturas as $factura) {
-                $nuevoFactura = new Factura($factura->fecha, $factura->total);
+                $nuevoFactura = new Factura($factura->fecha,$factura->total);
                 $this->agregarFactura($nuevoFactura);
             } 
            
@@ -103,11 +109,11 @@ require_once ('Persona.php');  */
             }
         
 
-        $pedidos = $jsonDatos->pedidos;
-        foreach ($pedidos as $pedido) {
-            $nuevoPedido = new Pedido($pedido>fecha, $pedido>producto, $pedido>cantidad);
-            $this->agregarPedido($nuevoPedido);
-        } 
+            $pedidos = $jsonDatos->pedidos;
+            foreach ($pedidos as $pedido) {
+                $nuevoPedido = new Pedido($pedido>fecha);
+                $this->agregarPedido($nuevoPedido);
+            } 
        }
 
         function grabar($nombreArchivo){

@@ -1,1 +1,1 @@
-{"clientes" : [],"proveedores" : [],"productos" : [{"nombre":"coc","marca":"coco","cantidad":"5","precio":"6","id":1}],"usuarios" : []}
+{"clientes" : [],"proveedores" : [],"productos" : [{"nombre":"COCA","marca":"COLA","cantidad":"5","precio":"6","id":1}],"usuarios" : [],"facturas" : [],"pedidos" : []}
