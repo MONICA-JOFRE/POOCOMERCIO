@@ -80,7 +80,7 @@ require_once ('Persona.php');  */
             $facturas = $jsonDatos->facturas;
             foreach ($facturas as $factura) {
                 $nuevoFactura = new Factura($factura->fecha, $factura->total);
-                $this->agregarFcatura($nuevoFactura);
+                $this->agregarFactura($nuevoFactura);
             } 
            
             $productos = $jsonDatos->productos;
