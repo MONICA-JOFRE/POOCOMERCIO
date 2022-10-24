@@ -17,6 +17,9 @@ require_once ('Persona.php');  */
         function agregarCliente($cliente) {
             $this->clientes[] = $cliente;
         } 
+        function getProductos(){
+            return $this->productos;
+        }
 
         function agregarProveedor($proveedor) {
             $this->proveedores[] = $proveedor;
@@ -53,14 +56,19 @@ require_once ('Persona.php');  */
             }
             $jsonProducto = '"productos" : ['.implode(',', $jsonProducto).']';
             
-            
+            $jsonFactura = [];
+            foreach ($this->facturas as $factura) {
+                $jsonFactura[] = json_encode($factura);
+            }
+            $jsonFactura = '"facturas" : ['.implode(',', $jsonFactura).']';
+
             $jsonUsuario = [];
             foreach ($this->usuarios as $usuario) {
                 $jsonUsuario[] = json_encode($usuario);
             }
             $jsonUsuario = '"usuarios" : ['.implode(',', $jsonUsuario).']';
 
-            return '{'. $jsonCliente . ',' . $jsonProveedor . ',' . $jsonProducto . ',' . $jsonUsuario .'}';
+            return '{'. $jsonCliente . ',' . $jsonProveedor . ',' . $jsonProducto . ',' . $jsonUsuario . ',' . $jsonFactura . '}';
         }
 
         function setJSON($datos) {
@@ -85,7 +93,7 @@ require_once ('Persona.php');  */
            
             $productos = $jsonDatos->productos;
             foreach ($productos as $producto) {
-                $nuevoProducto = new Producto($producto->nombre, $producto->marca, $producto->precio);
+                $nuevoProducto = new Producto($producto->nombre,$producto->marca,$producto->cantidad,$producto->precio);
                 $this->agregarProducto($nuevoProducto);
             }
             $usuarios = $jsonDatos->usuarios;
@@ -100,9 +108,9 @@ require_once ('Persona.php');  */
             $nuevoPedido = new Pedido($pedido>fecha, $pedido>producto, $pedido>cantidad);
             $this->agregarPedido($nuevoPedido);
         } 
+       }
 
-
-        function grabar($nombreArchivo) {
+        function grabar($nombreArchivo){
             $datos = $this->getJSON();
             file_put_contents($nombreArchivo, $datos);
         }
@@ -113,7 +121,7 @@ require_once ('Persona.php');  */
 
         }
       
-    }
+    
 }
 
     //['a', '1234', 'equry']   -----> implode(',', ['a', '1234', 'equry']) = 'a,1234,equry'
