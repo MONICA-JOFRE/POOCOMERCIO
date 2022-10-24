@@ -9,7 +9,7 @@ class Factura extends Detallefactura{
     public $fecha;
     public $total;
 
-        function __construct($cantidad,$fecha,$total){
+        function __construct($fecha,$total){
                 parent :: __construct($cantidad);
                 $this->id = ++self :: $numero;
                 $this->fecha= $fecha; 
