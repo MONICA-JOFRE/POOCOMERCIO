@@ -9,6 +9,5 @@ require_once ('productos/Factura.php');
 require_once ('productos/Detallefactura.php');
 require_once ('productos/Pedido.php');
 require_once ('productos/Detallepedido.php');
-
-include_once('menu.php');
+require_once('menu.php');
 

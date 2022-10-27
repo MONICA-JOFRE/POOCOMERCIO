@@ -1,5 +1,6 @@
 <?php
 require_once('Detallefactura.php');
+require_once('autoload.php');
 
 use \personas\Cliente;
 use \personas\Usuario; 
