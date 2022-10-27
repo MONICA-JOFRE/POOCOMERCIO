@@ -3,7 +3,7 @@ require_once 'autoload.php';
 
 
 $c = new Comercio();
-function agregarProducto(&$comercio){
+function agregarProducto(& $comercio){
     
     echo ("Ingrese nombre del producto:");
     $nombre = trim(fgets(STDIN));

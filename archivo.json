@@ -1,1 +1,1 @@
-{"clientes" : [],"proveedores" : [],"usuarios" : [],"productos" : [{"nombre":"cartulina","marca":"verde","cantidad":"5","precio":"200","id":1}],"facturas" : [],"pedidos" : []}
+{"clientes" : [],"proveedores" : [],"usuarios" : [],"productos" : [{"nombre":"mause","marca":"genius","cantidad":"5","precio":"2000","id":1},{"nombre":"teclado","marca":"genius","cantidad":"6","precio":"2500","id":2}],"facturas" : [],"pedidos" : []}
