@@ -43,10 +43,13 @@ function listarProductos($comercio){
     }
 }
 
-function modificarProductos($productos){
+function modificarProductos($c){
     echo("MODIFICACION DE PRODUCTOS");
     echo("\n");
-    foreach ($productos as $producto){
+    $this->producto->set("id",$producto);
+    $datos = this->producto->view();
+    return $datos;
+   /*  foreach ($productos as $producto){
         
         echo ($producto->getNombre());
         echo (" ");
@@ -57,7 +60,7 @@ function modificarProductos($productos){
         echo ($producto->getPrecio());
         echo ("\n");
        
-    }
+    } */
 }
 function ventaProductos($productos){
     echo("VENTA DE PRODUCTOS");
@@ -93,7 +96,7 @@ while ($opcion != 7) {
             };
             break;
         case 3: {
-             modificarProducto($c);
+             modificarProductos($c);
             };
             break;
         case 4: {
