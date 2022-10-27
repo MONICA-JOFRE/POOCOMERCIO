@@ -1,8 +1,9 @@
 <?php
 require_once 'autoload.php';
 
-$productos = [];
-function agregarProducto(&$lista){
+
+$c = new Comercio();
+function agregarProducto( $comercio){
     
     echo ("Ingrese nombre del producto:");
     $nombre = trim(fgets(STDIN));
@@ -19,16 +20,16 @@ function agregarProducto(&$lista){
     $c->setCantidad ($cantidad);
     $c->setPrecio($precio);
    
-    $lista[]= $c;
+    $comercio->agregarProducto($c);
  
 }
 
-function listarProductos($lista){
+function listarProductos($comercio){
     echo("LISTA DE PRODUCTOS");
     echo("\n");
     echo("-Nombre-Marca-cantidad-Precio");
     echo("\n");
-    foreach ($lista as $producto){
+    foreach ($comercio->getProductos() as $producto){
         
         echo ($producto->getNombre());
         echo (" ");
@@ -42,10 +43,13 @@ function listarProductos($lista){
     }
 }
 
-function modificarProductos($productos){
+function modificarProductos($c){
     echo("MODIFICACION DE PRODUCTOS");
     echo("\n");
-    foreach ($productos as $producto){
+    $this->producto->set("id",$producto);
+    $datos = this->producto->view();
+    return $datos;
+   /*  foreach ($productos as $producto){
         
         echo ($producto->getNombre());
         echo (" ");
@@ -56,7 +60,7 @@ function modificarProductos($productos){
         echo ($producto->getPrecio());
         echo ("\n");
        
-    }
+    } */
 }
 function ventaProductos($productos){
     echo("VENTA DE PRODUCTOS");
@@ -78,28 +82,38 @@ function ventaProductos($productos){
 
 
 $opcion = 0;
-while ($opcion != 5) {
+while ($opcion != 7) {
     mostrarMenu();
     $opcion = trim(fgets(STDIN));
     switch ($opcion) {
         case 1: {
-           agregarProducto($productos);
+           agregarProducto($c);
             };
             break;
         case 2: {
             
-            listarProductos($productos);
+            listarProductos($c);
             };
             break;
         case 3: {
-             modificarProducto($productos);
+             modificarProductos($c);
             };
             break;
         case 4: {
-            ventaProducto($productos);
+            ventaProducto($c);
             };
             break;
-        case 5: {
+            case 5: {
+                $c->grabar('archivo.json');
+            };
+            break;
+            case 6: {
+                $c = new Comercio();
+                $c->leer('archivo.json');
+            };
+            break;
+    
+        case 7: {
                 echo ("Salio del sistema");
             };
             break;
