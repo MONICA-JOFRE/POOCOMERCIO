@@ -3,7 +3,7 @@ require_once 'autoload.php';
 
 
 $c = new Comercio();
-function agregarProducto(& $comercio){
+function agregarProducto( $comercio){
     
     echo ("Ingrese nombre del producto:");
     $nombre = trim(fgets(STDIN));
@@ -108,6 +108,7 @@ while ($opcion != 7) {
             };
             break;
             case 6: {
+                $c = new Comercio();
                 $c->leer('archivo.json');
             };
             break;
