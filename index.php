@@ -66,7 +66,8 @@ function ventaProductos($productos){
     echo("VENTA DE PRODUCTOS");
     echo("\n");
     foreach ($productos as $producto){
-        
+        echo ($producto->getId ());
+        echo (" ");
         echo ($producto->getNombre());
         echo (" ");
         echo ($producto->getMarca());
