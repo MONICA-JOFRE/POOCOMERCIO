@@ -1,1 +1,1 @@
-{"clientes" : [{"nombre":"Monica","telefono":"25555555","cuil":"55555555","resp":"555555","id":1}],"proveedores" : [],"usuarios" : [],"productos" : [],"facturas" : [],"pedidos" : []}
+{"clientes" : [],"proveedores" : [],"usuarios" : [],"productos" : [{"nombre":"silla","marca":"madera","cantidad":"5","precio":"500","id":1}],"facturas" : [],"pedidos" : []}
