@@ -21,7 +21,7 @@ function menuOpciones($c){
         $opcion = trim(fgets(STDIN));
         switch ($opcion) {
             case 1: {
-                menuProducto();
+                menuProducto($c);
                 };
                 break;
             case 2: {
@@ -30,19 +30,19 @@ function menuOpciones($c){
                 };
                 break;
             case 3: {
-                menuUsuario();
+                menuUsuario($c);
                 };
                 break;
             case 4: {
-                menuProveedor();
+                menuProveedor($c);
                 };
                 break;
                 case 5: {
-                menuFactura();
+                menuFactura($c);
                 };
                 break;
                 case 6: {
-                menuPedido();
+                menuPedido($c);
                 };
                 break;
         
@@ -69,7 +69,7 @@ function mostrarMenu() {
         echo ("\nElija una opcion:");
 }
 
-function menuProducto(){
+function menuProducto($c){
     $opcion = 0;
     while ($opcion != 7) {
         echo ("***Menu de opciones Productos***\n");
