@@ -57,8 +57,7 @@ function menuOpciones($c){
 } 
 
 function mostrarMenu() {
-        echo ("***Menu de opciones***\n");
-        echo ("\n");
+      
         echo ("1 - Cargar \n");
         echo ("2 - Listar \n");
         echo ("3 - Modificar \n");
@@ -73,6 +72,8 @@ function mostrarMenu() {
 function menuProducto(){
     $opcion = 0;
     while ($opcion != 7) {
+        echo ("***Menu de opciones Productos***\n");
+        echo ("\n");
         mostrarMenu();
         $opcion = trim(fgets(STDIN));
         switch ($opcion) {
@@ -115,6 +116,8 @@ function menuProducto(){
 function menuCliente($c){
     $opcion = 0;
     while ($opcion != 7) {
+        echo ("***Menu de opciones cliente***\n");
+        echo ("\n");
         mostrarMenu();
         $opcion = trim(fgets(STDIN));
         switch ($opcion) {
