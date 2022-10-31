@@ -79,46 +79,74 @@ function ventaProductos($productos){
     }
 }
 
-
-
-$opcion = 0;
-while ($opcion != 7) {
-    mostrarMenu();
-    $opcion = trim(fgets(STDIN));
-    switch ($opcion) {
-        case 1: {
-           agregarProducto($c);
-            };
-            break;
-        case 2: {
-            
-            listarProductos($c);
-            };
-            break;
-        case 3: {
-             modificarProductos($c);
-            };
-            break;
-        case 4: {
-            ventaProducto($c);
-            };
-            break;
-            case 5: {
-                $c->grabar('archivo.json');
-            };
-            break;
-            case 6: {
-                $c = new Comercio();
-                $c->leer('archivo.json');
-            };
-            break;
+function agregarCliente( $comercio){
     
-        case 7: {
-                echo ("Salio del sistema");
-            };
-            break;
-    }
-    echo ("\n");
- }
+    echo ("Ingrese nombre del Cliente:");
+    $nombre = trim(fgets(STDIN));
+    echo ("Ingrese el telefono del Cliente:");
+    $telefono = trim(fgets(STDIN));
+    echo ("Ingrese el cuit del Cliente:");
+    $cuil = trim(fgets(STDIN));
+    echo ("Ingrese la condicion ante el iva:");
+    $resp = trim(fgets(STDIN));
+    $c = new Cliente($nombre, $telefono, $cuil, $resp);
 
+    $comercio->agregarCliente($c);
+ 
+}
+
+function listarClientes($comercio){
+    echo("LISTA DE CLIENTES");
+    echo("\n");
+    echo("-Nombre-Telefono-Cuil-Resp");
+    echo("\n");
+    foreach ($comercio->getClientes() as $cliente){
+        
+        echo ($cliente->getNombre());
+        echo (" ");
+        echo ($cliente->getTelefono());
+        echo (" ");
+        echo ($cliente->getCuil());
+        echo (" ");
+        echo ($cliente->getResp());
+        echo ("\n");
+       }
+}
+
+function modificarCliente($c){
+    echo("MODIFICACION DE Cliente");
+    echo("\n");
+    $this->cliente->set("id",$cliente);
+    $datos = this->$cliente->view();
+    return $datos;
+   /*  foreach ($clientes as $cliente){
+        
+        echo ($cliente->getNombre());
+        echo (" ");
+        echo ($cliente->getMarca());
+        echo (" ");
+        echo ($cliente->getCantidad());
+        echo (" ");
+        echo ($cliente->getPrecio());
+        echo ("\n");
+       
+    } */
+}
+function eliminarCliente($cliente){
+    echo("Eliminar cliente");
+    echo("\n");
+    foreach ($clientes as $cliente){
+        
+        echo ($cliente->getNombre());
+        echo (" ");
+        echo ($cliente->getMarca());
+        echo (" ");
+        echo ($cliente->getCantidad());
+        echo (" ");
+        echo ($cliente->getPrecio());
+        echo ("\n");
+       
+    }
+}
+menuOpciones($c);
 

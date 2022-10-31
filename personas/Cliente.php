@@ -4,13 +4,13 @@ require_once ('autoload.php');
 
     class Cliente extends Persona{
         static protected $cantidad=0;
-        public $cuit;
+        public $cuil;
         public $resp;
 
-        function __construct($nombre, $telefono, $cuit, $resp)
+        function __construct($nombre, $telefono, $cuil, $resp)
         {
             parent :: __construct($nombre, $telefono);
-            $this->cuit = $cuit;
+            $this->cuil = $cuil;
             $this->resp = $resp;
             $this->id = ++ self :: $cantidad;
         }

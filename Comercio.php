@@ -91,7 +91,7 @@ class Comercio {
 
         $clientes = $jsonDatos->clientes;
         foreach ($clientes as $cliente) {
-            $nuevoCliente = new Cliente($cliente->nombre, $cliente->telefono, $cliente->cuit, $cliente->resp);
+            $nuevoCliente = new Cliente($cliente->nombre, $cliente->telefono, $cliente->cuil, $cliente->resp);
             $this->agregarCliente($nuevoCliente);
         } 
         
@@ -140,4 +140,3 @@ class Comercio {
 
 }
 
-    //['a', '1234', 'equry']   -----> implode(',', ['a', '1234', 'equry']) = 'a,1234,equry'
