@@ -45,6 +45,14 @@ class Comercio {
     function agregarPedido($pedido) {
         $this->pedidos[] = $pedido;
     } 
+    function eliminarProducto($id){
+        for ($i = 0; $i < count ($this->productos);$i++){
+          $producto = $this->productos[$i];
+            if ($producto->getId()==$id){
+              unset($this->productos[$i]);
+          }
+        }
+    }
     
     function getJSON() {
         $jsonCliente = [];

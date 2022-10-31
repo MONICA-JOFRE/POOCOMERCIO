@@ -16,6 +16,9 @@ class Producto{
         $this->precio= $precio;   
     }
 
+    function getId() {
+        return $this->id;
+    }
     function getNombre() {
         return $this->nombre;
     }

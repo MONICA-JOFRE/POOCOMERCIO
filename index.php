@@ -46,9 +46,7 @@ function listarProductos($comercio){
 function modificarProductos($c){
     echo("MODIFICACION DE PRODUCTOS");
     echo("\n");
-    $this->producto->set("id",$producto);
-    $datos = this->producto->view();
-    return $datos;
+ 
    /*  foreach ($productos as $producto){
         
         echo ($producto->getNombre());
@@ -62,21 +60,13 @@ function modificarProductos($c){
        
     } */
 }
-function ventaProductos($productos){
-    echo("VENTA DE PRODUCTOS");
+function eliminarProducto($comercio){
+    echo(" DE PRODUCTOS");
     echo("\n");
-    foreach ($productos as $producto){
-        
-        echo ($producto->getNombre());
-        echo (" ");
-        echo ($producto->getMarca());
-        echo (" ");
-        echo ($producto->getCantidad());
-        echo (" ");
-        echo ($producto->getPrecio());
-        echo ("\n");
-       
-    }
+    echo ("Ingrese id a eliminar:");
+    $id = trim(fgets(STDIN));
+    $comercio -> eliminarProducto($id);
+
 }
 
 function agregarCliente( $comercio){
