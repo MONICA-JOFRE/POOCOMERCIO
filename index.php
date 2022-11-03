@@ -61,7 +61,7 @@ function modificarProductos($c){
     } */
 }
 function eliminarProducto($comercio){
-    
+
     echo ("Ingrese id a eliminar:");
     $id = trim(fgets(STDIN));
     $comercio -> eliminarProducto($id);
@@ -265,7 +265,7 @@ function eliminarProveedor($proveedor){
 
 function agregarFactura( $comercio){
     
-    /* echo ("Ingrese nombre del Cliente:");
+    /*echo ("Ingrese nombre del Cliente:");
     $nombre = trim(fgets(STDIN));
     echo ("Ingrese el telefono del Cliente:");
     $telefono = trim(fgets(STDIN));

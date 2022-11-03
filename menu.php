@@ -250,7 +250,7 @@ function menuProveedor($c){
 function menuFactura($c){
     $opcion = 0;
     while ($opcion != 7) {
-        echo ("***Menu de opciones  Factura***\n");
+        echo ("***Menu de Factura***\n");
         echo ("\n");
         mostrarMenu();
         $opcion = trim(fgets(STDIN));
@@ -293,7 +293,7 @@ function menuFactura($c){
 function menuPedido($c){
     $opcion = 0;
     while ($opcion != 7) {
-        echo ("***Menu de opciones Pedido***\n");
+        echo ("***Menu de Pedido***\n");
         echo ("\n");
         mostrarMenu();
         $opcion = trim(fgets(STDIN));
