@@ -1,5 +1,5 @@
 <?php
-require_once ('Persona.php');
+require_once ('autoload.php');
 
     class Usuario extends Persona{
         static protected $cantidad=0;
@@ -11,9 +11,15 @@ require_once ('Persona.php');
             $this->clave = $clave;
             $this->id = ++ self :: $cantidad;
         }
-
+        function getId() {
+            return $this->id;
+        }
         function getClave() {
             return $this->clave;
         }
+        function setClave() {
+            return $this->clave;
+        }
+        
        
     }
