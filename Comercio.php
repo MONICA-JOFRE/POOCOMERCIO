@@ -53,6 +53,46 @@ class Comercio {
           }
         }
     }
+    function eliminarCliente($id){
+        for ($i = 0; $i < count ($this->clientes);$i++){
+          $cliente = $this->clientes[$i];
+            if ($cliente->getId()==$id){
+              unset($this->clientes[$i]);
+          }
+        }
+    }
+    function eliminarUsuario($id){
+        for ($i = 0; $i < count ($this->usuarios);$i++){
+          $usuario = $this->usuarios[$i];
+            if ($usuario->getId()==$id){
+              unset($this->usuarios[$i]);
+          }
+        }
+    }
+    function eliminarProveedor($id){
+        for ($i = 0; $i < count ($this->proveedores);$i++){
+          $proveedor = $this->proveedores[$i];
+            if ($proveedor->getId()==$id){
+              unset($this->proveedores[$i]);
+          }
+        }
+    }
+    function eliminarFacura($id){
+        for ($i = 0; $i < count ($this->facturas);$i++){
+          $factura = $this->facturas[$i];
+            if ($factura->getId()==$id){
+              unset($this->facturas[$i]);
+          }
+        }
+    }
+    function eliminarPedido($id){
+        for ($i = 0; $i < count ($this->pedidos);$i++){
+          $pedido = $this->pedidos[$i];
+            if ($pedido->getId()==$id){
+              unset($this->pedidos[$i]);
+          }
+        }
+    }
     
     function getJSON() {
         $jsonCliente = [];
