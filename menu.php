@@ -91,7 +91,7 @@ function menuProducto($c){
                 };
                 break;
             case 4: {
-                ventaProducto($c);
+                eliminarProducto($c);
                 };
                 break;
                 case 5: {
