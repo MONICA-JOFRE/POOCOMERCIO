@@ -292,21 +292,7 @@ function listarFactura($comercio){
 function modificarFactura($c){
    /*  echo("MODIFICACION DE Factura");
     echo("\n");
-    $this->cliente->set("id",$cliente);
-    $datos = this->$cliente->view();
-    return $datos;
-   /*  foreach ($clientes as $cliente){
-        
-        echo ($cliente->getNombre());
-        echo (" ");
-        echo ($cliente->getMarca());
-        echo (" ");
-        echo ($cliente->getCantidad());
-        echo (" ");
-        echo ($cliente->getPrecio());
-        echo ("\n");
-       
-    } */ 
+    */ 
 }
 function eliminarFactura($factura){
     /* echo("Eliminar cliente");
@@ -360,37 +346,11 @@ function listarPedido($comercio){
 
 function modificarPedido($c){
    /*  echo("MODIFICACION DE Cliente");
-    echo("\n");
-    $this->cliente->set("id",$cliente);
-    $datos = this->$cliente->view();
-    return $datos;
-   /*  foreach ($clientes as $cliente){
-        
-        echo ($cliente->getNombre());
-        echo (" ");
-        echo ($cliente->getMarca());
-        echo (" ");
-        echo ($cliente->getCantidad());
-        echo (" ");
-        echo ($cliente->getPrecio());
-        echo ("\n");
-       
-    } */ 
+
 }
 function eliminarPedido($pedido){
     /* echo("Eliminar cliente");
-    echo("\n");
-    foreach ($clientes as $cliente){
-        
-        echo ($cliente->getNombre());
-        echo (" ");
-        echo ($cliente->getTelefono());
-        echo (" ");
-        echo ($cliente->getCuil());
-        echo (" ");
-        echo ($cliente->getResp());
-        echo ("\n");
-       
+
     } */
 }
 
