@@ -17,5 +17,13 @@ require_once ('autoload.php');
         }
         function getTelefono() {
             return $this->telefono;
+            
+        } function setNombre() {
+            return $this->nombre;
         }
+        function setTelefono() {
+            return $this->telefono;
+        }
+
     }
+
