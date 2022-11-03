@@ -46,19 +46,10 @@ function listarProductos($comercio){
 function modificarProductos($c){
     echo("MODIFICACION DE PRODUCTOS");
     echo("\n");
- 
-   /*  foreach ($productos as $producto){
-        
-        echo ($producto->getNombre());
-        echo (" ");
-        echo ($producto->getMarca());
-        echo (" ");
-        echo ($producto->getCantidad());
-        echo (" ");
-        echo ($producto->getPrecio());
-        echo ("\n");
-       
-    } */
+    echo ("Ingrese id a modificar:");
+    $id = trim(fgets(STDIN));
+    $comercio -> modificarProducto($id);
+
 }
 function eliminarProducto($comercio){
 

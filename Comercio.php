@@ -45,6 +45,15 @@ class Comercio {
     function agregarPedido($pedido) {
         $this->pedidos[] = $pedido;
     } 
+    
+    function modificarProductos($id){
+        for ($i = 0; $i < count ($this->productos);$i++){
+          $producto = $this->productos[$i];
+            if ($producto->getId()==$id){
+              ($this->productos[$i]);
+          }
+        }
+    }
     function eliminarProducto($id){
         for ($i = 0; $i < count ($this->productos);$i++){
           $producto = $this->productos[$i];
