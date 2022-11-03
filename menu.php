@@ -157,3 +157,179 @@ function menuCliente($c){
      }
     
 } 
+
+function menuUsuario($c){
+    $opcion = 0;
+    while ($opcion != 7) {
+        echo ("***Menu de opciones Usuario***\n");
+        echo ("\n");
+        mostrarMenu();
+        $opcion = trim(fgets(STDIN));
+        switch ($opcion) {
+            case 1: {
+               agregarUsuario($c);
+                };
+                break;
+            case 2: {
+                
+                listarUsuario($c);
+                };
+                break;
+            case 3: {
+                 modificarUsuario($c);
+                };
+                break;
+            case 4: {
+                eliminar($c);
+                };
+                break;
+                case 5: {
+                    $c->grabar('archivo.json');
+                };
+                break;
+                case 6: {
+                    $c = new Comercio();
+                    $c->leer('archivo.json');
+                };
+                break;
+        
+            case 7: {
+                    echo ("Salio del sistema");
+                };
+                break;
+        }
+        echo ("\n");
+     }
+    
+} 
+
+    
+function menuProveedor($c){
+    $opcion = 0;
+    while ($opcion != 7) {
+        echo ("***Menu de opciones Proveedor***\n");
+        echo ("\n");
+        mostrarMenu();
+        $opcion = trim(fgets(STDIN));
+        switch ($opcion) {
+            case 1: {
+               agregarProveedor($c);
+                };
+                break;
+            case 2: {
+                
+                listarProveedor($c);
+                };
+                break;
+            case 3: {
+                 modificarProveedor($c);
+                };
+                break;
+            case 4: {
+                eliminar($c);
+                };
+                break;
+                case 5: {
+                    $c->grabar('archivo.json');
+                };
+                break;
+                case 6: {
+                    $c = new Comercio();
+                    $c->leer('archivo.json');
+                };
+                break;
+        
+            case 7: {
+                    echo ("Salio del sistema");
+                };
+                break;
+        }
+        echo ("\n");
+     }
+}
+function menuFactura($c){
+    $opcion = 0;
+    while ($opcion != 7) {
+        echo ("***Menu de opciones  Factura***\n");
+        echo ("\n");
+        mostrarMenu();
+        $opcion = trim(fgets(STDIN));
+        switch ($opcion) {
+            case 1: {
+               agregarFactura($c);
+                };
+                break;
+            case 2: {
+                
+                listarFacturas($c);
+                };
+                break;
+            case 3: {
+                 modificarFacturas($c);
+                };
+                break;
+            case 4: {
+                eliminar($c);
+                };
+                break;
+                case 5: {
+                    $c->grabar('archivo.json');
+                };
+                break;
+                case 6: {
+                    $c = new Comercio();
+                    $c->leer('archivo.json');
+                };
+                break;
+        
+            case 7: {
+                    echo ("Salio del sistema");
+                };
+                break;
+        }
+        echo ("\n");
+     }
+}
+function menuPedido($c){
+    $opcion = 0;
+    while ($opcion != 7) {
+        echo ("***Menu de opciones Pedido***\n");
+        echo ("\n");
+        mostrarMenu();
+        $opcion = trim(fgets(STDIN));
+        switch ($opcion) {
+            case 1: {
+               agregarPedido($c);
+                };
+                break;
+            case 2: {
+                
+                listarPedidos($c);
+                };
+                break;
+            case 3: {
+                 modificarPedidos($c);
+                };
+                break;
+            case 4: {
+                eliminar($c);
+                };
+                break;
+                case 5: {
+                    $c->grabar('archivo.json');
+                };
+                break;
+                case 6: {
+                    $c = new Comercio();
+                    $c->leer('archivo.json');
+                };
+                break;
+        
+            case 7: {
+                    echo ("Salio del sistema");
+                };
+                break;
+        }
+        echo ("\n");
+     }
+}
