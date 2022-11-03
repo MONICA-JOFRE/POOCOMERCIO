@@ -264,41 +264,42 @@ function eliminarProveedor($proveedor){
 }
 
 function agregarFactura( $comercio){
-    
-    /*echo ("Ingrese nombre del Cliente:");
-    $nombre = trim(fgets(STDIN));
-    echo ("Ingrese el telefono del Cliente:");
-    $telefono = trim(fgets(STDIN));
+    echo ("Ingrese su id de usuario:");
+    $id = trim(fgets(STDIN));
+    echo ("Ingrese la fecha de la Factura:");
+    $fecha = trim(fgets(STDIN));
     echo ("Ingrese el cuit del Cliente:");
     $cuil = trim(fgets(STDIN));
-    echo ("Ingrese la condicion ante el iva:");
-    $resp = trim(fgets(STDIN));
-    $c = new Cliente($nombre, $telefono, $cuil, $resp);
+    echo ("Ingrese la cantidad de es producto:");
+    $cantidad = trim(fgets(STDIN));
+    echo ("¿Desea agregar otro producto?:");
+    $agregarProducto = trim(fgets(STDIN));
+    $c = new Factura($nombre, $telefono, $cuil, $resp);
 
-    $comercio->agregarCliente($c); */
+    $comercio->agregarFactura($c); 
  
 }
 
 function listarFactura($comercio){
-    /* echo("LISTA DE CLIENTES");
+    /* echo("LISTA DE Facturas");
     echo("\n");
     echo("-Nombre-Telefono-Cuil-Resp");
     echo("\n");
-    foreach ($comercio->getClientes() as $cliente){
+    foreach ($comercio->getFacturas() as $Factura){
         
-        echo ($cliente->getNombre());
+        echo ($Factura->getNombre());
         echo (" ");
-        echo ($cliente->getTelefono());
+        echo ($Factura->getTelefono());
         echo (" ");
-        echo ($cliente->getCuil());
+        echo ($Factura->getCuil());
         echo (" ");
-        echo ($cliente->getResp());
+        echo ($Factura->getResp());
         echo ("\n");
        } */
 }
 
 function modificarFactura($c){
-   /*  echo("MODIFICACION DE Cliente");
+   /*  echo("MODIFICACION DE Factura");
     echo("\n");
     $this->cliente->set("id",$cliente);
     $datos = this->$cliente->view();
@@ -316,7 +317,7 @@ function modificarFactura($c){
        
     } */ 
 }
-function eliminarFactura($cliente){
+function eliminarFactura($factura){
     /* echo("Eliminar cliente");
     echo("\n");
     foreach ($clientes as $cliente){
