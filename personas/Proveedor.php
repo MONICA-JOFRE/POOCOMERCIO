@@ -13,10 +13,15 @@ class Proveedor extends Persona{
         $this->id = ++self::$cantidad;
     }
 
+    function getId(){
+        return $this ->id;
+    }
     function getEmpresa() {
         return $this->empresa;
     }
- 
+ function setEmpresa(){
+    return $this->empresa;
+ }
    
 
 
