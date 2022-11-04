@@ -21,6 +21,15 @@ class Comercio {
     function getProductos(){
         return $this->productos;
     }
+    function getProducto($id){
+      $i = $this->buscarProducto($id);
+      if($i){
+        return $this->productos[$i];
+      }
+      return null;
+    }
+
+
     function getFacturas(){
         return $this->facturas;
     }
@@ -46,13 +55,20 @@ class Comercio {
         $this->pedidos[] = $pedido;
     } 
     
-    function modificarProductos($id){
+    function buscarProducto($id){
         for ($i = 0; $i < count ($this->productos);$i++){
           $producto = $this->productos[$i];
             if ($producto->getId()==$id){
-              ($this->productos[$i]);
+              return $i;
           }
         }
+        return null;
+    }
+    function modificarProductos($id,$n){
+        $i = $this->buscarProducto($id);
+        if ($i){
+             $this->productos[$i]= $n;
+          }
     }
     function eliminarProducto($id){
         for ($i = 0; $i < count ($this->productos);$i++){
