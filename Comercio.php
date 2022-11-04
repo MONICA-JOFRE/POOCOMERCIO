@@ -64,7 +64,7 @@ class Comercio {
         }
         return null;
     }
-    function modificarProductos($id,$n){
+    function modificarProducto($id,$n){
         $i = $this->buscarProducto($id);
         if ($i){
              $this->productos[$i]= $n;
