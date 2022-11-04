@@ -87,7 +87,7 @@ function menuProducto($c){
                 };
                 break;
             case 3: {
-                 modificarProductos($c);
+                 modificarProducto($c);
                 };
                 break;
             case 4: {

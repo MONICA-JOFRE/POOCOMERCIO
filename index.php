@@ -27,10 +27,12 @@ function agregarProducto( $comercio){
 function listarProductos($comercio){
     echo("LISTA DE PRODUCTOS");
     echo("\n");
-    echo("-Nombre-Marca-cantidad-Precio");
+    echo("Id-Nombre-Marca-cantidad-Precio");
     echo("\n");
     foreach ($comercio->getProductos() as $producto){
         
+        echo ($producto->getId());
+        echo (" ");
         echo ($producto->getNombre());
         echo (" ");
         echo ($producto->getMarca());
@@ -42,14 +44,63 @@ function listarProductos($comercio){
        
     }
 }
+function mostrarProducto($p){
+  
+    echo ("Ingrese opcion a modificar:");
+    $id = trim(fgets(STDIN)); 
 
-function modificarProductos($c){
+    echo (" 0 - salir\n");
+    echo (" 1 - Nombre:". $p->getNombre()."\n");
+    echo (" 2 - Marca:". $p->getMarca()."\n");
+    echo (" 3 - Cantidad:". $p->getCantidad()."\n");
+    echo (" 4 - Precio:". $p->getPrecio()."\n");
+
+    
+    switch ($id) {
+
+        case '1':
+            echo("ingrese nombre:");
+            $dato = trim(fgets(STDIN));
+           $p->setNombre($dato);
+            break;
+        case '2':
+            echo("ingrese Marca:");
+           $dato = trim(fgets(STDIN));
+           $p->setMarca($dato);
+            break;
+        case '3':
+            echo("ingrese cantidad:");
+            $dato = trim(fgets(STDIN));
+           $p->setCantidad($dato);
+        
+            break;
+        case '4':
+            echo("ingrese precio:");
+            $dato = trim(fgets(STDIN));
+           $p->setPrecio($dato);
+            break;
+        
+        default:
+        echo ("Salio del sistema");
+            break;
+    }
+    return $p;
+}
+
+function modificarProducto($c){
     echo("MODIFICACION DE PRODUCTOS");
     echo("\n");
     echo ("Ingrese id a modificar:");
-    $id = trim(fgets(STDIN));
-    $comercio -> modificarProducto($id);
-
+    $id = trim(fgets(STDIN)); 
+    $p = $c->getProducto($id);
+    
+    if ($p){
+        $n = mostrarProducto($p);
+        $c ->modificarProducto($id,$n);
+      }else {
+        echo("Producto no encontrado");
+    }
+    
 }
 function eliminarProducto($comercio){
 
