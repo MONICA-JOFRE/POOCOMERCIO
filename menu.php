@@ -1,5 +1,5 @@
 <?php
-require_once('autoload.php');
+require_once ('autoload.php');
 function menuPrincipal(){
     echo ("***Menu Principal***\n");
     echo ("\n");
@@ -110,9 +110,10 @@ function menuProducto($c){
                 break;
         }
         echo ("\n");
-     }
-    
-} 
+     
+    }   
+}
+
 function menuCliente($c){
     $opcion = 0;
     while ($opcion != 7) {
