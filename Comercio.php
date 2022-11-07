@@ -28,6 +28,13 @@ class Comercio {
       }
       return null;
     }
+    function getCliente($id){
+        $i = $this->buscarCliente($id);
+        if($i){
+          return $this->clientes[$i];
+        }
+        return null;
+      }
 
 
     function getFacturas(){
@@ -64,10 +71,25 @@ class Comercio {
         }
         return null;
     }
-    function modificarProducto($id,$n){
+    function modificarProducto($id,$n){//$n es la posicion
         $i = $this->buscarProducto($id);
         if ($i){
              $this->productos[$i]= $n;
+          }
+    }
+    function buscarCliente($id){
+        for ($i = 0; $i < count ($this->clientes);$i++){
+          $cliente = $this->clientes[$i];
+            if ($cliente->getId()==$id){
+              return $i;
+          }
+        }
+        return null;
+    }
+    function modificarCliente($id,$n){//$n es la posicion
+        $i = $this->buscarCliente($id);
+        if ($i){
+             $this->clientes[$i]= $n;
           }
     }
     function eliminarProducto($id){

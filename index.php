@@ -44,6 +44,7 @@ function listarProductos($comercio){
        
     }
 }
+
 function mostrarProducto($p){
   
     echo ("Ingrese opcion a modificar:");
@@ -128,10 +129,12 @@ function agregarCliente( $comercio){
 function listarClientes($comercio){
     echo("LISTA DE CLIENTES");
     echo("\n");
-    echo("-Nombre-Telefono-Cuil-Resp");
+    echo("Id-Nombre-Telefono-Cuil-Resp");
     echo("\n");
     foreach ($comercio->getClientes() as $cliente){
         
+        echo ($cliente->getId());
+        echo (" ");
         echo ($cliente->getNombre());
         echo (" ");
         echo ($cliente->getTelefono());
@@ -143,40 +146,69 @@ function listarClientes($comercio){
        }
 }
 
-function modificarCliente($c){
-    echo("MODIFICACION DE Cliente");
-    echo("\n");
-    $this->cliente->set("id",$cliente);
-    $datos = this->$cliente->view();
-    return $datos;
-   /*  foreach ($clientes as $cliente){
+function mostrarCliente($p){
+  
+    echo ("Ingrese opcion a modificar:");
+    $id = trim(fgets(STDIN)); 
+
+    echo (" 0 - salir\n");
+    echo (" 1 - Nombre:". $p->getNombre()."\n");
+    echo (" 2 - Telefono:". $p->getTelefono()."\n");
+    echo (" 3 - Cuil:". $p->getCuil()."\n");
+    echo (" 4 - Condicion ante el iva:". $p->getResp()."\n");
+
+    
+    switch ($id) {
+
+        case '1':
+            echo("ingrese nombre:");
+            $dato = trim(fgets(STDIN));
+           $p->setNombre($dato);
+            break;
+        case '2':
+            echo("ingrese Telefono:");
+           $dato = trim(fgets(STDIN));
+           $p->setTelefono($dato);
+            break;
+        case '3':
+            echo("ingrese cuil:");
+            $dato = trim(fgets(STDIN));
+           $p->setCuil($dato);
         
-        echo ($cliente->getNombre());
-        echo (" ");
-        echo ($cliente->getMarca());
-        echo (" ");
-        echo ($cliente->getCantidad());
-        echo (" ");
-        echo ($cliente->getPrecio());
-        echo ("\n");
-       
-    } */
+            break;
+        case '4':
+            echo("Condicion ante el iva:");
+            $dato = trim(fgets(STDIN));
+           $p->setResp($dato);
+            break;
+        
+        default:
+        echo ("Salio del sistema");
+            break;
+    }
+    return $p;
 }
-function eliminarCliente($cliente){
+
+function modificarCliente($c){
+    echo("MODIFICAR DATOS DEL CLIENTE");
+    echo("\n");
+    echo ("Ingrese id a modificar:");
+    $id = trim(fgets(STDIN)); 
+    $p = $c->getCliente($id);
+    
+    if ($p){
+        $n = mostrarCliente($p);
+        $c ->modificarCliente($id,$n);
+      }else {
+        echo("Cliente no encontrado");
+    }
+}
+function eliminarCliente($comercio){
     echo("Eliminar cliente");
     echo("\n");
-    foreach ($clientes as $cliente){
-        
-        echo ($cliente->getNombre());
-        echo (" ");
-        echo ($cliente->getTelefono());
-        echo (" ");
-        echo ($cliente->getCuil());
-        echo (" ");
-        echo ($cliente->getResp());
-        echo ("\n");
-       
-    }
+    echo ("Ingrese id a eliminar:");
+    $id = trim(fgets(STDIN));
+    $comercio -> eliminarCliente($id);
 }
 
 function agregarUsuario( $comercio){
@@ -214,18 +246,7 @@ function modificarUsuario($c){
     echo("MODIFICACION DE Usuario");
     echo("\n");
 
-   /*  foreach ($clientes as $cliente){
-        
-        echo ($cliente->getNombre());
-        echo (" ");
-        echo ($cliente->getMarca());
-        echo (" ");
-        echo ($cliente->getCantidad());
-        echo (" ");
-        echo ($cliente->getPrecio());
-        echo ("\n");
-       
-    } */
+   
 }
 function eliminarUsuario($usuario){
     echo("Eliminar usuario");
@@ -277,18 +298,7 @@ function modificarProveedor($c){
     echo("MODIFICACION DE proveedor");
     echo("\n");
 
-   /*  foreach ($clientes as $cliente){
-        
-        echo ($cliente->getNombre());
-        echo (" ");
-        echo ($cliente->getMarca());
-        echo (" ");
-        echo ($cliente->getCantidad());
-        echo (" ");
-        echo ($cliente->getPrecio());
-        echo ("\n");
-       
-    } */
+   
 }
 function eliminarProveedor($proveedor){
     echo("Eliminar proveedor");
@@ -407,3 +417,4 @@ function eliminarPedido($pedido){
 
 menuOpciones($c);
 
+?>
