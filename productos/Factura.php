@@ -22,10 +22,10 @@ class Factura extends Detallefactura{
         function getTotal() {
             return $this->total;
         } 
-        function setFecha() {
-            return $this->fecha;
+        function setFecha($fecha) {
+            $this->fecha = $fecha;
         }
-        function setTotal() {
-            return $this->total;
+        function setTotal($total) {
+            $this->total= $total;
         }
 }

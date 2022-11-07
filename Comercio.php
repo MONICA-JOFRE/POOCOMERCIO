@@ -83,6 +83,9 @@ class Comercio {
         if ($i){
              $this->productos[$i]= $n;
           }
+          else{
+            echo "producto no encontrado";
+          }
     }
     function buscarCliente($id){
         for ($i = 0; $i < count ($this->clientes);$i++){

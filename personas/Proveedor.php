@@ -19,8 +19,8 @@ class Proveedor extends Persona{
     function getEmpresa() {
         return $this->empresa;
     }
- function setEmpresa(){
-    return $this->empresa;
+ function setEmpresa($empresa){
+      $this->empresa= $empresa;
  }
    
 

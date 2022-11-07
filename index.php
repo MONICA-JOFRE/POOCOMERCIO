@@ -45,10 +45,8 @@ function listarProductos($comercio){
     }
 }
 
-function mostrarProducto($p){
-  
-    echo ("Ingrese opcion a modificar:");
-    $id = trim(fgets(STDIN)); 
+function mostrarProducto(&$p){
+
 
     echo (" 0 - salir\n");
     echo (" 1 - Nombre:". $p->getNombre()."\n");
@@ -56,7 +54,10 @@ function mostrarProducto($p){
     echo (" 3 - Cantidad:". $p->getCantidad()."\n");
     echo (" 4 - Precio:". $p->getPrecio()."\n");
 
-    
+   
+    echo ("Ingrese opcion a modificar:");
+    $id = trim(fgets(STDIN)); 
+
     switch ($id) {
 
         case '1':
@@ -98,6 +99,7 @@ function modificarProducto($c){
     if ($p){
         $n = mostrarProducto($p);
         $c ->modificarProducto($id,$n);
+
       }else {
         echo("Producto no encontrado");
     }

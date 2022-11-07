@@ -17,9 +17,7 @@ require_once ('autoload.php');
         function getClave() {
             return $this->clave;
         }
-        function setClave() {
-            return $this->clave;
+        function setClave($clave) {
+            $this->clave = $clave;
         }
-        
-       
     }

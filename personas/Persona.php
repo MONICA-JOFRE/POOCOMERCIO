@@ -18,11 +18,11 @@ require_once ('autoload.php');
         function getTelefono() {
             return $this->telefono;
             
-        } function setNombre() {
-            return $this->nombre;
+        } function setNombre($nombre) {
+            $this->nombre;
         }
-        function setTelefono() {
-            return $this->telefono;
+        function setTelefono($telefono) {
+            $this->telefono= $telefono;
         }
 
     }
