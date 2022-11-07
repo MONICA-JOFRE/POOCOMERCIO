@@ -173,7 +173,7 @@ function menuUsuario($c){
                 break;
             case 2: {
                 
-                listarUsuario($c);
+                listarUsuarios($c);
                 };
                 break;
             case 3: {
@@ -219,7 +219,7 @@ function menuProveedor($c){
                 break;
             case 2: {
                 
-                listarProveedor($c);
+                listarProveedores($c);
                 };
                 break;
             case 3: {
