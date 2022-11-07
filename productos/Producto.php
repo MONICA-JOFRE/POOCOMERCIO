@@ -32,7 +32,7 @@ class Producto{
         return $this->precio;
     }
     function setNombre($nombre) {
-        return $this->nombre;
+        $this->nombre = $nombre;
     }
     function setMarca($marca) {
         $this->marca= $marca;
