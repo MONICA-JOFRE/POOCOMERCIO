@@ -28,8 +28,32 @@ class Pedido {
         function getProveedor() {
             return $this->proveedor;
         }
+        function getProducto() {
+            return $this->producto;
+        }
+        function getCantidad() {
+            return $this->cantidad;
+        }
+        function getTotal() {
+            return $this->total;
+        }
         function setFecha() {
             return $this->fecha;
+        }
+        function setUsuario() {
+            return $this->usuario;
+        }
+        function setProveedor() {
+            return $this->proveedor;
+        }
+        function setProducto() {
+            return $this->producto;
+        }
+        function setCantidad() {
+            return $this->cantidad;
+        }
+        function setTotal() {
+            return $this->total;
         }
         
 }
