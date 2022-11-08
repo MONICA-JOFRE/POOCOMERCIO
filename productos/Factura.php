@@ -44,9 +44,7 @@ class Factura{
         function setUsuario() {
             return $this->usuario;
         }
-        function setCantidad() {
-            return $this->cantidad;
-        }
+        
         function setCliente() {
             return $this->cliente;
         }
