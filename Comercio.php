@@ -21,6 +21,7 @@ class Comercio {
     function getProductos(){
         return $this->productos;
     }
+
     function getProducto($id){
       $i = $this->buscarProducto($id);
       if($i){
@@ -28,13 +29,26 @@ class Comercio {
       }
       return null;
     }
-
-
-    function getFacturas(){
-        return $this->facturas;
+    function getCliente($id){
+        $i = $this->buscarCliente($id);
+        if($i){
+          return $this->clientes[$i];
+        }
+        return null;
+      }
+    function getUsuario($id){
+    $i = $this->buscarUsuario($id);
+    if($i){
+        return $this->usuarios[$i];
     }
-    function getPedidos(){
-        return $this->pedidos;
+    return null;
+    }
+    function getProveedor($id){
+    $i = $this->buscarProveedor($id);
+    if($i){
+        return $this->proveedores[$i];
+    }
+    return null;
     }
     function agregarCliente($cliente) {
         $this->clientes[] = $cliente;
@@ -64,12 +78,47 @@ class Comercio {
         }
         return null;
     }
-    function modificarProducto($id,$n){
+    function modificarProducto($id,$n){//$n es la posicion
         $i = $this->buscarProducto($id);
         if ($i){
              $this->productos[$i]= $n;
           }
+          else{
+            echo "producto no encontrado";
+          }
     }
+    function buscarCliente($id){
+        for ($i = 0; $i < count ($this->clientes);$i++){
+          $cliente = $this->clientes[$i];
+            if ($cliente->getId()==$id){
+              return $i;
+          }
+        }
+        return null;
+    }
+    function modificarCliente($id,$n){//$n es la posicion
+        $i = $this->buscarCliente($id);
+        if ($i){
+             $this->clientes[$i]= $n;
+          }
+    }
+    function buscarUsuario($id){
+        for ($i = 0; $i < count ($this->usuarios);$i++){
+          $usuario = $this->usuarios[$i];
+            if ($usuario->getId()==$id){
+              return $i;
+          }
+        }
+        return null;
+    }
+    function modificarUsuario($id,$n){//$n es la posicion
+        $i = $this->buscarUsuario($id);
+        if ($i){
+             $this->usuarios[$i]= $n;
+          }
+    }
+    
+    
     function eliminarProducto($id){
         for ($i = 0; $i < count ($this->productos);$i++){
           $producto = $this->productos[$i];

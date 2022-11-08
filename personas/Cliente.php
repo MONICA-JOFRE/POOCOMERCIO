@@ -25,10 +25,10 @@ require_once ('autoload.php');
         function getResp() {
             return $this->resp;
         }
-        function setCuil() {
-            return $this->cuil;
+        function setCuil($cuil) {
+            $this->cuil=$cuil;
         }
-        function setResp() {
-            return $this->resp;
+        function setResp($resp) {
+            $this->resp = $resp;
         } 
     }

@@ -52,8 +52,7 @@ function menuOpciones($c){
                 break;
         }
         echo ("\n");
-     }
-    
+     }   
 } 
 
 function mostrarMenu() {
@@ -132,11 +131,12 @@ function menuCliente($c){
                 };
                 break;
             case 3: {
-                 modificarClientes($c);
+                 modificarCliente($c);
+                 $c->grabar('archivo.json');
                 };
                 break;
             case 4: {
-                eliminar($c);
+                eliminarCliente($c);
                 };
                 break;
                 case 5: {
@@ -173,7 +173,7 @@ function menuUsuario($c){
                 break;
             case 2: {
                 
-                listarUsuario($c);
+                listarUsuarios($c);
                 };
                 break;
             case 3: {
@@ -219,7 +219,7 @@ function menuProveedor($c){
                 break;
             case 2: {
                 
-                listarProveedor($c);
+                listarProveedores($c);
                 };
                 break;
             case 3: {

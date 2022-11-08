@@ -31,17 +31,17 @@ class Producto{
     function getPrecio() {
         return $this->precio;
     }
-    function setNombre() {
-        return $this->nombre;
+    function setNombre($nombre) {
+        $this->nombre = $nombre;
     }
-    function setMarca() {
-        return $this->marca;
+    function setMarca($marca) {
+        $this->marca= $marca;
     }
-    function setCantidad() {
-        return $this->cantidad;
+    function setCantidad($cantidad) {
+        $this->cantidad= $cantidad;
     }
-    function setPrecio() {
-        return $this->precio;
+    function setPrecio($precio) {
+        $this->precio = $precio;
     } 
 }
 
