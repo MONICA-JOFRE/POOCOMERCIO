@@ -41,7 +41,6 @@ class Factura{
         function setFecha($fecha) {
             $this->fecha = $fecha;
         }
-<<<<<<< HEAD
         function setUsuario() {
             return $this->usuario;
         }
@@ -59,9 +58,5 @@ class Factura{
         }
         function setTotal() {
             return $this->total;
-=======
-        function setTotal($total) {
-            $this->total= $total;
->>>>>>> 2c607301744108bc503bf656f0a20f3d1e76ea6e
         }
 }
