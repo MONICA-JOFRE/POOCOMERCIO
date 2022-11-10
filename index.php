@@ -386,7 +386,7 @@ function modificarProveedor($c){
         $c ->modificarProveedor($id,$n);
         
         }else {
-        echo("Cliente no encontrado");
+        echo("Proveedor no encontrado");
     }
 }
 function eliminarProveedor($proveedor){
@@ -422,18 +422,18 @@ function listarFacturas($comercio){
     echo("\n");
     echo("fecha-usuario-cliente-producto-cantidad-total");
     echo("\n");
-    foreach ($comercio->getFacturas() as $Factura){
-        echo ($Factura->getFecha());
+    foreach ($comercio->getFacturas() as $factura){
+        echo ($factura->getFecha());
         echo ("\n");
-        echo ($Factura->getUsuario());
+        echo ($factura->getUsuario());
         echo (" ");
-        echo ($Factura->getgetCliente());
+        echo ($factura->getgetCliente());
         echo (" ");
-        echo ($Factura->getProducto());
+        echo ($factura->getProducto());
         echo (" ");
-        echo ($Factura->getCantidad());
+        echo ($factura->getCantidad());
         echo (" ");
-        echo ($Factura->getTotal());
+        echo ($factura->getTotal());
         echo ("\n");
        } 
 }
@@ -442,28 +442,45 @@ function mostrarFactura(&$c){
     echo("MODIFICAR Factura");
     echo("\n");
     echo (" 0 - salir\n");
-    echo (" 1 - Nombre:". $p->getNombre()."\n");
-    echo (" 2 - Telefono:". $p->getTelefono()."\n");
-    echo (" 3 - Cuil:". $p->getEmpresa()."\n");
-    
+    echo (" 1 - Fecha:". $p->getFecha()."\n");
+    echo (" 2 - id Usuario:". $p->getUsuario()."\n");
+    echo (" 3 - id Cliente:". $p->getCliente()."\n");
+    echo (" 4 - id Producto:". $p->getProducto()."\n");
+    echo (" 5 - Cantidad:". $p->getCantidad()."\n");
+    echo (" 6 - Total:". $p->getTotal()."\n");
+
     echo ("Ingrese opcion a modificar:");
     $id = trim(fgets(STDIN)); 
     switch ($id) {
         case '1':
-            echo("ingrese nombre:");
+            echo("ingrese la Fecha:");
             $dato = trim(fgets(STDIN));
-            $p->setNombre($dato);
+            $p->setFecha($dato);
             break;
         case '2':
-            echo("ingrese Telefono:");
+            echo("ingrese el id Usuario:");
             $dato = trim(fgets(STDIN));
-            $p->setTelefono($dato);
+            $p->setUsuario($dato);
             break;
         case '3':
-            echo("ingrese la empresa:");
+            echo("ingrese la Cliente:");
             $dato = trim(fgets(STDIN));
-            $p->setEmpresa($dato);
-        
+            $p->setCliente($dato);
+            break;
+        case '4':
+            echo("ingrese el id del Producto:");
+            $dato = trim(fgets(STDIN));
+            $p->setProducto($dato);
+            break;
+        case '5':
+            echo("ingrese la Cantidad:");
+            $dato = trim(fgets(STDIN));
+            $p->setCantidad($dato);
+            break;
+        case '6':
+            echo("ingrese el Total:");
+            $dato = trim(fgets(STDIN));
+            $p->setTotal($dato);
             break;
         
         default:
@@ -474,23 +491,23 @@ function mostrarFactura(&$c){
 }
         
 function modificarFactura($c){
-    echo("MODIFICAR DATOS DEL Proveedor");
+    echo("MODIFICAR DATOS DE LA FACTURA");
     echo("\n");
     echo ("Ingrese id a modificar:");
     $id = trim(fgets(STDIN)); 
-    $p = $c->getProveedor($id);
+    $p = $c->getFactura($id);
     
     if ($p){
-        $n = mostrarProveedor($p);
-        $c ->modificarProveedor($id,$n);
+        $n = mostrarFactura($p);
+        $c ->modificarFactura($id,$n);
         
         }else {
-        echo("Cliente no encontrado");
+        echo("factura no encontrada");
     }
 }  
 
 function eliminarFactura($factura){
-     echo("Eliminar cliente");
+    echo("Eliminar Factura");
     echo("\n");
     echo ("Ingrese id a eliminar:");
     $id = trim(fgets(STDIN));
@@ -498,44 +515,111 @@ function eliminarFactura($factura){
 }
 function agregarPedido( $comercio){
     
-    /* echo ("Ingrese nombre del Cliente:");
-    $nombre = trim(fgets(STDIN));
-    echo ("Ingrese el telefono del Cliente:");
-    $telefono = trim(fgets(STDIN));
-    echo ("Ingrese el cuit del Cliente:");
-    $cuil = trim(fgets(STDIN));
-    echo ("Ingrese la condicion ante el iva:");
-    $resp = trim(fgets(STDIN));
-    $c = new Cliente($nombre, $telefono, $cuil, $resp);
+    echo ("Ingrese la fecha del pedido:");
+    $fecha = trim(fgets(STDIN));
+    echo ("Ingrese su id del proveedor:");
+    $proveedor = trim(fgets(STDIN));
+    echo ("Ingrese el ID del Usuario:");
+    $usuario = trim(fgets(STDIN));
+    echo ("agregar producto:");
+    $producto = trim(fgets(STDIN));
+    echo ("Ingrese producto:");
+    $cantidad = trim(fgets(STDIN));
+    echo ("total:");
+    $total = trim(fgets(STDIN));
+    $c = new Factura($fecha,$proveedor,$usuario,$producto,$cantidad,$total);
 
-    $comercio->agregarCliente($c); */
+    $comercio->agregarFactura($c); 
  
 }
 
 function listarPedidos($comercio){
-    /* echo("LISTA DE CLIENTES");
+    echo("fecha-proveedor-usuario-producto-cantidad-total");
     echo("\n");
-    echo("-Nombre-Telefono-Cuil-Resp");
-    echo("\n");
-    foreach ($comercio->getClientes() as $cliente){
-        
-        echo ($cliente->getNombre());
-        echo (" ");
-        echo ($cliente->getTelefono());
-        echo (" ");
-        echo ($cliente->getCuil());
-        echo (" ");
-        echo ($cliente->getResp());
+    foreach ($comercio->getPedidos() as $pedido){
+        echo ($pedido->getFecha());
         echo ("\n");
-       } */
+        echo ($pedido->getProveedor());
+        echo (" ");
+        echo ($pedido->getgetUsuario());
+        echo (" ");
+        echo ($pedido->getProducto());
+        echo (" ");
+        echo ($pedido->getCantidad());
+        echo (" ");
+        echo ($pedido->getTotal());
+        echo ("\n");
+       } 
 }
+function mostrarPedido(&$c){
+    echo("MODIFICAR Factura");
+    echo("\n");
+    echo (" 0 - salir\n");
+    echo (" 1 - Fecha:". $p->getFecha()."\n");
+    echo (" 2 - id Usuario:". $p->getUsuario()."\n");
+    echo (" 3 - id Cliente:". $p->getCliente()."\n");
+    echo (" 4 - id Producto:". $p->getProducto()."\n");
+    echo (" 5 - Cantidad:". $p->getCantidad()."\n");
+    echo (" 6 - Total:". $p->getTotal()."\n");
 
+    echo ("Ingrese opcion a modificar:");
+    $id = trim(fgets(STDIN)); 
+    switch ($id) {
+        case '1':
+            echo("ingrese la Fecha:");
+            $dato = trim(fgets(STDIN));
+            $p->setFecha($dato);
+            break;
+        case '2':
+            echo("ingrese el id del Proveedor:");
+            $dato = trim(fgets(STDIN));
+            $p->setProveedor($dato);
+            break;
+        case '3':
+            echo("ingrese el id Usuario:");
+            $dato = trim(fgets(STDIN));
+            $p->setUsuario($dato);
+            break;
+        
+        case '4':
+            echo("ingrese el id del Producto:");
+            $dato = trim(fgets(STDIN));
+            $p->setProducto($dato);
+            break;
+        case '5':
+            echo("ingrese la Cantidad:");
+            $dato = trim(fgets(STDIN));
+            $p->setCantidad($dato);
+            break;
+        case '6':
+            echo("ingrese el Total:");
+            $dato = trim(fgets(STDIN));
+            $p->setTotal($dato);
+            break;
+        
+        default:
+        echo ("Salio del sistema");
+            break;
+    }
+    return $p;
+}
 function modificarPedido($c){
-   echo("MODIFICACION DE Cliente");
+   echo("MODIFICAR PEDIDO");
+   echo ("Ingrese id a modificar:");
+   $id = trim(fgets(STDIN)); 
+   $p = $c->getPedido($id);
+   
+   if ($p){
+       $n = mostrarPedido($p);
+       $c ->modificarPedido($id,$n);
+       
+       }else {
+       echo("Pedido no encontrado");
+   }
 
 }
 function eliminarPedido($pedido){
-  echo("Eliminar cliente");
+
   echo ("Ingrese id a eliminar:");
   $id = trim(fgets(STDIN));
   $comercio -> eliminarPedido($id);
