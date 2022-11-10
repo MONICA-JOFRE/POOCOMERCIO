@@ -285,13 +285,13 @@ function modificarFactura($id,$n){//$n es la posicion
 
         $facturas = $jsonDatos->facturas;
         foreach ($facturas as $factura) {
-            $nuevoFactura = new Factura($factura->fecha,$factura->total);
+            $nuevoFactura = new Factura($factura->fecha,$factura->$usuario,$factura->$cliente,$factura->$producto,$factura->$cantidad,$factura->total);
             $this->agregarFactura($nuevoFactura);
         } 
         
         $pedidos = $jsonDatos->pedidos;
         foreach ($pedidos as $pedido) {
-            $nuevoPedido = new Pedido($pedido>fecha);
+            $nuevoPedido = new Pedido($pedido->fecha,$pedido->$usuario,$pedido->$cliente,$pedido->$producto,$pedido->$cantidad,$pedido->$total);
             $this->agregarPedido($nuevoPedido);
         } 
     }

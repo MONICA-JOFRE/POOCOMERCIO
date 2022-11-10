@@ -231,7 +231,7 @@ function agregarUsuario( $comercio){
 function listarUsuarios($comercio){
     echo("LISTA DE Usuarios");
     echo("\n");
-    echo("-Nombre-Telefono-Clave");
+    echo("Id-Nombre-Telefono-Clave");
     echo("\n");
     foreach ($comercio->getUsuarios() as $usuario){
         
@@ -242,7 +242,7 @@ function listarUsuarios($comercio){
         echo ($usuario->getTelefono());
         echo (" ");
         echo ($usuario->getClave());
-        echo (" ");
+        echo("\n");
        }
 }
 
@@ -325,14 +325,14 @@ function listarProveedores($comercio){
     echo("\n");
     echo("-Nombre-Telefono-Empresa");
     echo("\n");
-    foreach ($comercio->getProveedor() as $proveedor){
+    foreach ($comercio->getProveedores() as $proveedor){
         
         echo ($proveedor->getNombre());
         echo (" ");
         echo ($proveedor->getTelefono());
         echo (" ");
         echo ($proveedor->getClave());
-        echo (" ");
+        echo("\n");
        }
 }
 
