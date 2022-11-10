@@ -9,7 +9,8 @@ class Pedido {
     public $cantidad;
     public $total;
    
-   function __construct($fecha,$usuario,$proveedor,$producto,$cantidad,$total) {
+   function __construct($fecha,$usuario,$proveedor,$producto,$cantidad,$total)
+   {
             $this->id = ++self ::$npedido;
             $this->fecha= $fecha;
             $this->usuario= $usuario;
@@ -18,6 +19,9 @@ class Pedido {
             $this->cantidad= $cantidad;
             $this->total= $total;
        }
+        function getId() {
+            return $this->id;
+        }
 
         function getFecha() {
             return $this->fecha;
@@ -34,26 +38,26 @@ class Pedido {
         function getCantidad() {
             return $this->cantidad;
         }
-        function getTotal() {
-            return $this->total;
+        function getTotal($total) {
+            $this->total= $total;
         }
-        function setFecha() {
-            return $this->fecha;
+        function setFecha($fecha) {
+            $this->fecha= $fecha;
         }
-        function setUsuario() {
-            return $this->usuario;
+        function setUsuario($usuario) {
+            $this->usuario= $usuario;
         }
-        function setProveedor() {
-            return $this->proveedor;
+        function setProveedor($proveedor) {
+            $this->proveedor= $proveedor;
         }
-        function setProducto() {
-            return $this->producto;
+        function setProducto($producto) {
+            $this->producto= $producto;
         }
-        function setCantidad() {
-            return $this->cantidad;
+        function setCantidad($cantidad) {
+            $this->cantidad= $cantidad;
         }
-        function setTotal() {
-            return $this->total;
+        function setTotal($total) {
+            $this->total= $total;
         }
         
 }

@@ -41,20 +41,20 @@ class Factura{
         function setFecha($fecha) {
             $this->fecha = $fecha;
         }
-        function setUsuario() {
-            return $this->usuario;
+        function setUsuario($usuario) {
+            $this->usuario= $usuario;
         }
         
-        function setCliente() {
-            return $this->cliente;
+        function setCliente($cliente) {
+            $this->cliente= $cliente;
         }
-        function setProducto() {
-            return $this->producto;
+        function setProducto($producto) {
+            $this->producto= $producto;
         }
-        function setCantidad() {
-            return $this->cantidad;
+        function setCantidad($cantidad) {
+            $this->cantidad= $cantidad;
         }
-        function setTotal() {
-            return $this->total;
+        function setTotal($total) {
+            $this->total= $total;
         }
 }
