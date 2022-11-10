@@ -392,51 +392,50 @@ function modificarProveedor($c){
 function eliminarProveedor($proveedor){
     echo("Eliminar proveedor");
     echo("\n");
-    foreach ($proveedores as $proveedor){
-        
-        echo ($proveedor->getNombre());
-        echo (" ");
-        echo ($proveedor->getTelefono());
-        echo (" ");
-        echo ($proveedor->getEmpresa());
-        echo (" ");    
-       
-    }
+    echo ("Ingrese id a eliminar:");
+    $id = trim(fgets(STDIN));
+    $comercio -> eliminarProveedor($id);
 }
 
 function agregarFactura( $comercio){
-    echo ("Ingrese su id de usuario:");
-    $id = trim(fgets(STDIN));
+   
     echo ("Ingrese la fecha de la Factura:");
     $fecha = trim(fgets(STDIN));
+    echo ("Ingrese su id de usuario:");
+    $usuario = trim(fgets(STDIN));
     echo ("Ingrese el ID del Cliente:");
-    $cuil = trim(fgets(STDIN));
-    echo ("Ingrese la cantidad de es producto:");
+    $cliente = trim(fgets(STDIN));
+    echo ("agregar producto:");
+    $producto = trim(fgets(STDIN));
+    echo ("Ingrese producto:");
     $cantidad = trim(fgets(STDIN));
-    echo ("¿Desea agregar otro producto?:");
-    $agregarProducto = trim(fgets(STDIN));
-    $c = new Factura($nombre, $telefono, $cuil, $resp);
+    echo ("total:");
+    $total = trim(fgets(STDIN));
+    $c = new Factura($fecha,$usuario,$cliente,$producto,$cantidad,$total);
 
     $comercio->agregarFactura($c); 
  
 }
 
 function listarFacturas($comercio){
-    /* echo("LISTA DE Facturas");
+    echo("LISTA DE Facturas");
     echo("\n");
-    echo("-Nombre-Telefono-Cuil-Resp");
+    echo("fecha-usuario-cliente-producto-cantidad-total");
     echo("\n");
     foreach ($comercio->getFacturas() as $Factura){
-        
-        echo ($Factura->getNombre());
-        echo (" ");
-        echo ($Factura->getTelefono());
-        echo (" ");
-        echo ($Factura->getCuil());
-        echo (" ");
-        echo ($Factura->getResp());
+        echo ($Factura->getFecha());
         echo ("\n");
-       } */
+        echo ($Factura->getUsuario());
+        echo (" ");
+        echo ($Factura->getgetCliente());
+        echo (" ");
+        echo ($Factura->getProducto());
+        echo (" ");
+        echo ($Factura->getCantidad());
+        echo (" ");
+        echo ($Factura->getTotal());
+        echo ("\n");
+       } 
 }
 
 function mostrarFactura(&$c){
@@ -493,15 +492,9 @@ function modificarFactura($c){
 function eliminarFactura($factura){
      echo("Eliminar cliente");
     echo("\n");
-    foreach ($facturas as $factura){
-        
-        echo ($factura->getNombre());
-        echo (" ");
-        echo ($factura->getTelefono());
-        echo (" ");
-        echo ($factura->getEmpresa());
-        echo (" ");   
-    }
+    echo ("Ingrese id a eliminar:");
+    $id = trim(fgets(STDIN));
+    $comercio -> eliminarFactura($id);
 }
 function agregarPedido( $comercio){
     
@@ -538,13 +531,14 @@ function listarPedidos($comercio){
 }
 
 function modificarPedido($c){
-   /*  echo("MODIFICACION DE Cliente");
+   echo("MODIFICACION DE Cliente");
 
 }
 function eliminarPedido($pedido){
-    /* echo("Eliminar cliente");
-
-    } */
+  echo("Eliminar cliente");
+  echo ("Ingrese id a eliminar:");
+  $id = trim(fgets(STDIN));
+  $comercio -> eliminarPedido($id);
 }
 
 menuOpciones($c);
