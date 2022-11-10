@@ -21,7 +21,12 @@ class Comercio {
     function getProductos(){
         return $this->productos;
     }
-
+    function getPedidos(){
+      return $this->pedidos;
+    }
+    function getFacturas(){
+        return $this->facturas;
+    }
     function getProducto($id){
       $i = $this->buscarProducto($id);
       if($i){
@@ -50,6 +55,20 @@ class Comercio {
     }
     return null;
     }
+    function getFactura($id){
+      $i = $this->buscarFactura($id);
+      if($i){
+          return $this->facturas[$i];
+      }
+      return null;
+      }
+      function getPedido($id){
+      $i = $this->buscarPedido($id);
+      if($i){
+          return $this->pedidos[$i];
+      }
+      return null;
+      }
     function agregarCliente($cliente) {
         $this->clientes[] = $cliente;
     } 
@@ -117,7 +136,36 @@ class Comercio {
              $this->usuarios[$i]= $n;
           }
     }
-    
+    function buscarProveedor($id){
+      for ($i = 0; $i < count ($this->proveedores);$i++){
+        $proveedor = $this->proveedores[$i];
+          if ($proveedor->getId()==$id){
+            return $i;
+        }
+      }
+      return null;
+  }
+  function modificarProveedor($id,$n){//$n es la posicion
+      $i = $this->buscarProveedor($id);
+      if ($i){
+           $this->proveedores[$i]= $n;
+        }
+  }
+  function buscarFactura($id){
+    for ($i = 0; $i < count ($this->facturas);$i++){
+      $factura = $this->facturas[$i];
+        if ($factura->getId()==$id){
+          return $i;
+      }
+    }
+    return null;
+}
+function modificarFactura($id,$n){//$n es la posicion
+    $i = $this->buscarFactura($id);
+    if ($i){
+         $this->facturas[$i]= $n;
+      }
+}  
     
     function eliminarProducto($id){
         for ($i = 0; $i < count ($this->productos);$i++){
