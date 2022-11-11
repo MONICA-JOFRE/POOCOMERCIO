@@ -407,7 +407,7 @@ function agregarFactura( $comercio){
     $cliente = trim(fgets(STDIN));
     echo ("agregar producto:");
     $producto = trim(fgets(STDIN));
-    echo ("Ingrese producto:");
+    echo ("Ingrese cantidad:");
     $cantidad = trim(fgets(STDIN));
     echo ("total:");
     $total = trim(fgets(STDIN));
@@ -427,7 +427,7 @@ function listarFacturas($comercio){
         echo ("\n");
         echo ($factura->getUsuario());
         echo (" ");
-        echo ($factura->getgetCliente());
+        echo ($factura->getCliente());
         echo (" ");
         echo ($factura->getProducto());
         echo (" ");
