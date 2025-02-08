@@ -1,3 +1,5 @@
+
+
 <?php
 require_once 'autoload.php';
 
@@ -401,10 +403,13 @@ function agregarFactura( $comercio){
    
     echo ("Ingrese la fecha de la Factura:");
     $fecha = trim(fgets(STDIN));
+    $usuario = listarUsuarios($comercio);
     echo ("Ingrese su id de usuario:");
     $usuario = trim(fgets(STDIN));
+    $cliente = listarClientes($comercio);
     echo ("Ingrese el ID del Cliente:");
     $cliente = trim(fgets(STDIN));
+    $producto = listarProductos($comercio);
     echo ("agregar producto:");
     $producto = trim(fgets(STDIN));
     echo ("Ingrese cantidad:");
@@ -627,4 +632,3 @@ function eliminarPedido($pedido){
 
 menuOpciones($c);
 
-?>
